@@ -38,7 +38,7 @@ def image_to_base64(image):
     return img_str
 
 # FastAPI endpoint to upload an image and process OCR
-@app.post("/process/")
+@app.post("/ocr/process/")
 async def process_image(file: UploadFile = File(...), points: str = Form(...)):
     # Read the uploaded image
     file_bytes = await file.read()
